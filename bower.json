@@ -1,0 +1,19 @@
+{
+  "name": "full-stack-application",
+  "version": "0.0.0",
+  "authors": [
+    "vikram Jadhv <vikramcse.10@gmail.com>"
+  ],
+  "description": "A simple react demo application",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.14.0"
+  }
+}
