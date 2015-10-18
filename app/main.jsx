@@ -1,7 +1,18 @@
-var React	=	require('react/addons'); // here comes useful browserify
-console.log('jsx is running');
 // where all the rendering takes place
+var React				=	require('react/addons'); // here comes useful browserify
+var GroseryItemList 	= 	require('./components/GroseryItemList.jsx');
+var groseryItemStore  	= 	require('./stores/GroseryItemStore.jsx');
 
-var GroseryItemList = require('./components/GroseryItemList.jsx');
+var initial				= 	groseryItemStore.getItems();
 // because id is taken upto the global scope so no need for getElementByID
-React.render(<GroseryItemList />, app); 
+// we have passed the object as a property to component
+function render() {
+	React.render(<GroseryItemList items={initial}/>, app); 
+}
+// when on change called then again render
+groseryItemStore.onChange(function(items) {
+	initial = items;
+	render();
+});
+
+render();
